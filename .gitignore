@@ -6,3 +6,4 @@ dist/
 .next/
 *.zip
 *.log
+.env.local

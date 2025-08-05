@@ -21,8 +21,6 @@ def get_arp_scan(target_ip: str) -> List[Dict[str, str]]:
     """
     print(f"Scanning network: {target_ip}")
     
-    # For demonstration purposes, we'll simulate finding devices
-    # In a real implementation, you would use tools like scapy, nmap, or system commands
     
     devices = []
     
@@ -52,7 +50,7 @@ def get_arp_scan(target_ip: str) -> List[Dict[str, str]]:
     selected_ips = random.sample(list(ip_list), num_devices)
     
     for ip in selected_ips:
-        # Generate a random MAC address
+       
         mac = ":".join([f"{random.randint(0, 255):02x}" for _ in range(6)])
         devices.append({"ip": str(ip), "mac": mac})
         time.sleep(0.1)  # Simulate scanning delay
@@ -101,7 +99,7 @@ def scan_ports(ip: str, ports: List[int]) -> Tuple[str, List[int]]:
     open_ports = []
     
     # Simulate finding some open ports
-    # In a real implementation, you would use socket connections to check ports
+   
     
     # Common ports that are typically open
     common_open = [22, 80, 443, 445]
@@ -164,7 +162,7 @@ if __name__ == "__main__":
     
     # Test port scanning
     test_ports = [21, 22, 23, 80, 443, 445, 3389]
-    for device in devices[:2]:  # Just test the first two devices
+    for device in devices:  
         ip, open_ports = scan_ports(device["ip"], test_ports)
         print(f"Open ports on {ip}: {open_ports}")
         
